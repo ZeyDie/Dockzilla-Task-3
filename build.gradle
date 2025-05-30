@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group = 'pro.doczilla'
+version = 'task-3'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly group: "org.projectlombok", name: "lombok", version: "${lombok}"
+    annotationProcessor group: "org.projectlombok", name: "lombok", version: "${lombok}"
+    // https://mvnrepository.com/artifact/org.jetbrains/annotations
+    implementation group: "org.jetbrains", name: "annotations", version: "${annotations}"
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
