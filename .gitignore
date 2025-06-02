@@ -42,3 +42,9 @@ bin/
 .DS_Store
 /frontend/node_modules/
 /frontend/dist/
+/frontend/package-lock.json
+/.idea/gradle.xml
+/.idea/hybrisProjectSettings.xml
+/.idea/misc.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
