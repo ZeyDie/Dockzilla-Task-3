@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Прогноз температуры</h1>
+
+    <div class="search-container">
+        <input type="text" id="city-input" placeholder="Введите название города (Moscow, Berlin)">
+        <button id="search-btn">Search</button>
+    </div>
+
+    <div id="error-message" class="error"></div>
+
+    <div id="weather-info" class="weather-info">
+        <h2 id="city-name"></h2>
+        <h3 id="country-name"></h3>
+        <div id="temperature-chart"></div>
+    </div>
+</div>
+
+<script src="app.js" type="module"></script>
+</body>
+</html>
