@@ -153,7 +153,7 @@ public abstract class HTTPService implements IInitialize {
             @NonNull final HttpExchange exchange,
             @NonNull final String response
     ) {
-        exchange.getResponseHeaders().add("Access-Control-Allow-Origin", "http://localhost:3000");
+        exchange.getResponseHeaders().add("Access-Control-Allow-Origin", "http://localhost:3003,http://localhost:3002");
         exchange.getResponseHeaders().add("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
         exchange.getResponseHeaders().add("Access-Control-Allow-Headers", "Content-Type");
         exchange.getResponseHeaders().set("Content-Type", MediaType.JSON.name());
