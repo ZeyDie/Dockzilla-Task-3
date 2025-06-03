@@ -9,19 +9,20 @@ import pro.doczilla.common.CommonLaunch;
 import pro.doczilla.common.api.interfaces.IInitialize;
 import pro.doczilla.common.api.utils.LoggerUtil;
 import pro.doczilla.server.services.http.HTTPService;
+import pro.doczilla.server.services.http.fileserver.AuthHTTPService;
 import pro.doczilla.server.services.http.weather.WeatherHTTPService;
 
 import java.net.InetSocketAddress;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 
 public final class ServerLaunch extends CommonLaunch {
     @Getter
     private static final @NotNull ServerLaunch instance = new ServerLaunch();
 
-    private final @NotNull List<HTTPService> httpServices = new ArrayList<>(
-            Collections.singleton(new WeatherHTTPService())
+    private final @NotNull List<HTTPService> httpServices = Arrays.asList(
+            new WeatherHTTPService(),
+            new AuthHTTPService()
     );
 
     @Getter

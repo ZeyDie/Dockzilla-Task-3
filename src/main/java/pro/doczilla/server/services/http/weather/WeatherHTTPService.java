@@ -1,18 +1,23 @@
 package pro.doczilla.server.services.http.weather;
 
-import com.google.common.cache.*;
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
 import com.google.common.collect.Maps;
 import com.sun.net.httpserver.HttpExchange;
-import lombok.*;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.SneakyThrows;
+import lombok.val;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import pro.doczilla.common.CommonLaunch;
 import pro.doczilla.common.api.data.weather.HourlyTemperatureData;
 import pro.doczilla.common.api.utils.LoggerUtil;
+import pro.doczilla.server.api.open_meteo.configurations.GeoConfig;
 import pro.doczilla.server.api.open_meteo.data.ApiResponseData;
 import pro.doczilla.server.api.open_meteo.data.GeoLocationData;
 import pro.doczilla.server.api.open_meteo.data.TemperatureGeoLocationData;
-import pro.doczilla.server.api.open_meteo.configurations.GeoConfig;
 import pro.doczilla.server.services.http.HTTPService;
 
 import java.io.IOException;

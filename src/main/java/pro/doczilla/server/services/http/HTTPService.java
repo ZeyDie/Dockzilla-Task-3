@@ -11,11 +11,13 @@ import lombok.val;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import pro.doczilla.common.api.MediaType;
+import pro.doczilla.common.api.data.StatusResponseData;
 import pro.doczilla.common.api.interfaces.IInitialize;
 import pro.doczilla.common.api.utils.LoggerUtil;
 import pro.doczilla.server.ServerLaunch;
 
 import java.io.IOException;
+import java.nio.file.Path;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,7 +28,11 @@ import static java.net.HttpURLConnection.HTTP_OK;
 
 public abstract class HTTPService implements IInitialize {
     @Getter
+    private final @NotNull Path data = Path.of("data");
+
+    @Getter
     private final @NotNull Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
     private final @NotNull List<HttpExchange> exchanges = new ArrayList<>();
 
     private @NotNull Service service;
@@ -117,6 +123,30 @@ public abstract class HTTPService implements IInitialize {
         }
 
         return params;
+    }
+
+    protected void sendResponseEmpty(@NonNull final HttpExchange exchange) {
+        this.sendResponseJson(
+                exchange,
+                this.gson.toJson(StatusResponseData
+                        .builder()
+                        .success(false)
+                        .message("Empty Request")
+                        .build()
+                )
+        );
+    }
+
+    protected void sendResponseBad(@NonNull final HttpExchange exchange, @NonNull final String message) {
+        this.sendResponseJson(
+                exchange,
+                this.gson.toJson(StatusResponseData
+                        .builder()
+                        .success(false)
+                        .message(message)
+                        .build()
+                )
+        );
     }
 
     protected void sendResponseJson(
