@@ -1,3 +1,15 @@
+Установка NodeJS Windows:
+
+```shell
+winget install OpenJS.NodeJS.LTS
+```
+
+Установка NodeJS Linux:
+
+```shell
+apt install npm
+```
+
 Запуск бэкенда:
 
 ```
