@@ -12,6 +12,7 @@ import lombok.val;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import pro.doczilla.common.CommonLaunch;
+import pro.doczilla.common.api.data.StatusResponseData;
 import pro.doczilla.common.api.data.weather.HourlyTemperatureData;
 import pro.doczilla.common.api.utils.LoggerUtil;
 import pro.doczilla.server.api.open_meteo.configurations.GeoConfig;
@@ -57,17 +58,28 @@ public final class WeatherHTTPService extends HTTPService {
 
         LoggerUtil.info("Weather GET: " + getBody);
 
-        if (city == null) return false;
+        if (city == null) {
+            super.sendResponseBad(
+                    exchange,
+                    this.getGson().toJson(
+                            StatusResponseData.builder()
+                                    .success(false)
+                                    .message("City " + city + " not found")
+                                    .build()
+                    )
+            );
+            return true;
+        }
 
         @Nullable val presented = this.weatherCache.get(city);
 
         if (presented != null) {
-            LoggerUtil.info("Weather presented " + this.getGson().toJson(presented));
+            LoggerUtil.info("Weather presented " + presented);
             super.sendResponseJson(exchange, this.getGson().toJson(presented));
             return true;
         }
 
-        return false;
+        return true;
     }
 
     private @NotNull HourlyTemperatureData getHourlyTemperatureData(@NotNull final String city) {
