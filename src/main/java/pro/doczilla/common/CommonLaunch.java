@@ -16,7 +16,7 @@ public class CommonLaunch implements ILaunch {
     private static final @NotNull CommonLaunch instance = new CommonLaunch();
 
     @Getter
-    private static final int port = 10000;
+    private static final int port = 8090;
 
     @Getter
     private static final @NotNull HttpClient httpClient = HttpClient.newBuilder()
