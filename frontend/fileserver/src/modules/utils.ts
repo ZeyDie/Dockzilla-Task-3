@@ -1,4 +1,4 @@
-import {errorMessage, searchBtn} from './constants.js';
+import {errorMessage, searchBtn} from './constants';
 
 export function setLoading(isLoading: boolean) {
     searchBtn.disabled = isLoading;

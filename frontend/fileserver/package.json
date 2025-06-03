@@ -1,0 +1,20 @@
+{
+  "name": "task-2-frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dist": "npm run build && copyfiles -u 1 \"src/*.html\" \"src/*.css\" dist",
+    "start": "npm run dist && npx http-server ./dist -p 3002 --cors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZeyDie/Doczilla.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "copyfiles": "^2.4.1"
+  }
+}

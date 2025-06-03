@@ -1,5 +1,5 @@
-import {cityName, countryName, getChart, weatherInfo} from './constants.js';
-import {WeatherData} from './types.js';
+import {cityName, countryName, getChart, weatherInfo} from './constants';
+import {WeatherData} from './types';
 import * as echarts from "echarts";
 
 export function renderWeatherInfo(data: WeatherData) {

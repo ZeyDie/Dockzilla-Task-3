@@ -5,18 +5,14 @@
   "scripts": {
     "build": "tsc",
     "dist": "npm run build && copyfiles -u 1 \"src/*.html\" \"src/*.css\" dist",
-    "start": "npm run dist && npx http-server ./dist -p 3000 --cors"
+    "start": "npm run dist && npx http-server ./dist -p 3003 --cors"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ZeyDie/Dockzilla-Task-3.git"
+    "url": "git+https://github.com/ZeyDie/Doczilla.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ZeyDie/Dockzilla-Task-3/issues"
-  },
-  "homepage": "https://github.com/ZeyDie/Dockzilla-Task-3#readme",
   "description": "",
   "dependencies": {
     "@types/echarts": "^4.9.22",

@@ -1,7 +1,7 @@
-import {fetchWeatherData} from './api.js';
-import {renderTemperatureChart, renderWeatherInfo} from './render.js';
-import {setLoading, showError} from './utils.js';
-import {cityInput, errorMessage, weatherInfo} from './constants.js';
+import {fetchWeatherData} from './api';
+import {renderTemperatureChart, renderWeatherInfo} from './render';
+import {setLoading, showError} from './utils';
+import {cityInput, errorMessage, weatherInfo} from './constants';
 
 export async function handleSearch() {
     const city = cityInput.value.trim();

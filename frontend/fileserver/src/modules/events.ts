@@ -1,5 +1,5 @@
-import {cityInput, searchBtn} from './constants.js';
-import {handleSearch} from './app.js';
+import {cityInput, searchBtn} from './constants';
+import {handleSearch} from './app';
 
 searchBtn.addEventListener('click', handleSearch);
 cityInput.addEventListener('keypress', (e) => {

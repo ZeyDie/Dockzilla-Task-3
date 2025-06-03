@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'pro.doczilla'
-version = 'task-3'
+version = 'tasks-2-3'
 
 repositories {
     mavenCentral()
@@ -26,11 +26,4 @@ dependencies {
 
     // https://mvnrepository.com/artifact/com.google.guava/guava
     implementation group: "com.google.guava", name: "guava", version: "${guava}"
-
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-}
-
-test {
-    useJUnitPlatform()
 }
