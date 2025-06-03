@@ -1,7 +1,7 @@
 import {WeatherData} from './types';
 
 export async function fetchWeatherData(city: string): Promise<WeatherData> {
-    const url = `http://localhost:8090/weather?city=${encodeURIComponent(city)}`;
+    const url = `http://localhost:8100/weather?city=${encodeURIComponent(city)}`;
     const response = await fetch(url);
 
     if (!response.ok) {
