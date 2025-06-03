@@ -2,14 +2,12 @@ package pro.doczilla.server.services.http.weather;
 
 import com.google.common.cache.*;
 import com.google.common.collect.Maps;
-import com.google.common.util.concurrent.ListenableFuture;
-import com.google.common.util.concurrent.ListenableFutureTask;
 import com.sun.net.httpserver.HttpExchange;
 import lombok.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import pro.doczilla.common.CommonLaunch;
-import pro.doczilla.common.api.data.HourlyTemperatureData;
+import pro.doczilla.common.api.data.weather.HourlyTemperatureData;
 import pro.doczilla.common.api.utils.LoggerUtil;
 import pro.doczilla.server.api.open_meteo.data.ApiResponseData;
 import pro.doczilla.server.api.open_meteo.data.GeoLocationData;
@@ -18,14 +16,10 @@ import pro.doczilla.server.api.open_meteo.configurations.GeoConfig;
 import pro.doczilla.server.services.http.HTTPService;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
-import java.time.Duration;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
 public final class WeatherHTTPService extends HTTPService {

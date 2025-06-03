@@ -1,4 +1,4 @@
-package pro.doczilla.common.api.data;
+package pro.doczilla.common.api.data.weather;
 
 import com.google.common.collect.Maps;
 import lombok.Builder;
@@ -11,8 +11,10 @@ import java.util.Map;
 @Data
 @Builder
 public class HourlyTemperatureData {
-    private @NotNull String city;
-    private @Nullable String country;
+    @Builder.Default
+    private @NotNull String city = "UNKNOWN";
+    @Builder.Default
+    private @Nullable String country = "UNKNOWN";
     @Builder.Default
     private @NotNull Map<String, Double> temperatures = Maps.newHashMap();
 }
